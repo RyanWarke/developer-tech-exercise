@@ -1,20 +1,20 @@
 <template>
   <Loading v-if="loading" />
   <div v-else class="my-8 mx-10">
-    <div class="w-full bg-[#FFEAE3] p-12 rounded-3xl">
-      <h2 class="text-4xl font-black">Employee Directory</h2>
+    <div class="w-full bg-[#FFEAE3] p-6 sm:p-12 rounded-3xl">
+      <h2 class="text-xl sm:text-4xl font-black">Employee Directory</h2>
       <table class="w-full mt-4 border-separate border-spacing-y-3">
         <thead>
           <tr>
-            <th class="py-2 px-8 text-left font-light text-gray-500">Employee</th>
-            <th class="py-2 px-8 text-right font-light text-gray-500">Actions</th>
+            <th class="py-2 px-6 sm:px-8 text-left font-light text-gray-500">Employee</th>
+            <th class="py-2 px-6 sm:px-8 text-right font-light text-gray-500">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(employee, employeeIndex) in employees" :key="employeeIndex" class="py-2 my-2">
-            <td class="py-4 px-8 rounded-l-3xl bg-white">
+            <td class="py-4 px-6 sm:px-8 rounded-l-3xl bg-white">
               <div class="flex items-center gap-6">
-                <div class="rounded-3xl bg-blue-500 h-24 w-24 flex items-center justify-center">
+                <div class="hidden rounded-3xl bg-blue-500 h-24 w-24 sm:flex items-center justify-center">
                   <h2 class="text-2xl text-white font-black tracking-widest">{{ `${employee.forename[0]}${employee.surname[0]}` }}</h2>
                 </div>
                 <h2 class="text-lg font-bold">{{ employee.title }} {{ employee.forename }} {{ employee.surname }}</h2>

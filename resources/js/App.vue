@@ -45,7 +45,7 @@
             </a>
           </div>
 
-          <div class="flex justify-between items-center">
+          <div class="sm:flex justify-between items-center">
             <div>
               <h2 class="font-black text-lg">{{ school.name }}</h2>
               <div class="text-sm mt-2">
@@ -55,7 +55,7 @@
                 <p>{{ school.postcode }}</p>
               </div>
             </div>
-            <div class="text-sm text-right bg-gray-100 px-8 py-4 rounded-3xl">
+            <div class="mt-4 sm:mt-0 text-sm text-center sm:text-right bg-gray-100 px-8 py-4 rounded-3xl">
               <h3 class="font-bold">Last Synced:</h3>
               <p class="mb-4">{{ resyncDate }}</p>
               <button type="button" @click="resyncData" class="underline">{{ resyncing ? 'Syncing...' : 'Resync Now' }}</button>

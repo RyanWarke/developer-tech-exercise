@@ -10,25 +10,25 @@
       </router-link>
     </div>
 
-    <div v-for="(schoolClass, classIndex) in classes" :key="classIndex"  class="bg-gray-100 p-8 mb-8 rounded-3xl">
-      <div class="mb-8 flex justify-between items-center">
-        <h3 class="font-black text-2xl">{{ formatDate(schoolClass.date) }}</h3>
+    <div v-for="(schoolClass, classIndex) in classes" :key="classIndex"  class="bg-gray-100 p-6 sm:p-8 mb-8 rounded-3xl">
+      <div class="mb-8 sm:flex justify-between items-center">
+        <h3 class="mb-4 sm:mb-0 font-black text-2xl">{{ formatDate(schoolClass.date) }}</h3>
         <span class="bg-green-100 text-green-600 font-bold text-sm tracking-wider px-4 py-2 rounded-lg border border-green-400">{{ schoolClass.classes.length }} Lessons</span>
       </div>
 
-      <div v-for="(lesson, lessonIndex) in schoolClass.classes" :key="lessonIndex" class="bg-[#FFEAE3] mb-10 p-8 rounded-3xl">
+      <div v-for="(lesson, lessonIndex) in schoolClass.classes" :key="lessonIndex" class="bg-[#FFEAE3] mb-10 p-6 sm:p-8 rounded-3xl">
         <div class="mb-4">
           <h4 class="font-black text-lg">{{ lesson.name }}</h4>
           {{ formatDuration(lesson.lesson.starts_at, lesson.lesson.ends_at) }}
         </div>
 
-        <div class="grid grid-cols-4 gap-4">
-          <div v-for="(student, studentIndex) in lesson.students" :key="studentIndex" class="p-4 rounded-3xl bg-white">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div v-for="(student, studentIndex) in lesson.students" :key="studentIndex" class="p-4 rounded-3xl bg-white sm:block flex items-center">
             <div class="flex gap-4 items-center">
-              <div class="rounded-3xl bg-blue-500 h-16 w-16 flex items-center justify-center">
+              <div class="hidden sm:flex rounded-3xl bg-blue-500 h-16 w-16 items-center justify-center">
                 <h2 class="text-lg text-white font-black tracking-widest">{{ `${student.student.forename[0]}${student.student.surname[0]}` }}</h2>
               </div>
-              <h3 class="text-sm font-bold">{{ student.student.forename }} {{ student.student.surname }}</h3>
+              <h3 class="text-xs sm:text-sm font-bold">{{ student.student.forename }} {{ student.student.surname }}</h3>
             </div>
           </div>
         </div>
