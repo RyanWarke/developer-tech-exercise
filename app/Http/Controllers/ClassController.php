@@ -30,7 +30,7 @@ class ClassController extends Controller
 
         // Divide the Classes, Lessons and Students into the days they occur
         foreach ($classes as $class) {
-            foreach($class->lessons as $lesson) {
+            foreach ($class->lessons as $lesson) {
                 $index = array_search($lesson->starts_at->format('Y-m-d'), array_column($employeeClasses, 'date'));
                 $employeeClasses[$index]['classes'][] = [
                     'name' => $class->name,
